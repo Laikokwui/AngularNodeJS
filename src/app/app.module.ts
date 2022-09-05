@@ -1,22 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BoatComponent } from './boat/boat.component';
-import { ParentComponent } from './parent/parent.component';
-import { HomeComponent } from './home/home.component';
+import { BoatComponent } from './components/boat/boat.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { HomeComponent } from './components/home/home.component';
+import { CustomerlistComponent } from './components/customerlist/customerlist.component';
+import { CustomercreateComponent } from './components/customercreate/customercreate.component';
+import { CustomerupdateComponent } from './components/customerupdate/customerupdate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoatComponent,
     ParentComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerlistComponent,
+    CustomercreateComponent,
+    CustomerupdateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
