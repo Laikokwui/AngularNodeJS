@@ -1,6 +1,6 @@
 export class Customer {
     _id?: any;
-    name?: String;
+    fullName?: String;
     phone?: String;
     address?: String;
 }

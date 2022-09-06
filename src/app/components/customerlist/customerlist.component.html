@@ -29,8 +29,8 @@
           [class.active]="i == currentIndex"
           (click)="setActiveCustomer(customer, i)"
         >
-          {{ customer.name }}
-          <button class="m-3 btn btn-sm btn-danger" (click)="removeCustomer(i)">
+          {{ customer.fullName }}
+          <button class="m-3 btn btn-sm btn-danger" (click)="removeCustomer(customer._id)">
             Remove
           </button>
         </li>

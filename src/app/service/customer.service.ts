@@ -29,7 +29,7 @@ export class CustomerService {
  
   // Get all objects
   getCustomers() {
-    return this.httpClient.get<Customer[]>(`${this.REST_API}`);
+    return this.httpClient.get<Customer[]>(`${this.REST_API}/customer`);
   }
  
   // Get single object
