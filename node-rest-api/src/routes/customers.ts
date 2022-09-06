@@ -11,10 +11,10 @@ export class Routes {
                 message: 'GET request successfulll!!!!'
             })
         })
-
-        app.route('/customer').post(this.customerController.addNewCustomer);
-
+        
         app.route('/customer').get(this.customerController.getCustomers);
+
+        app.route('/customer/create').post(this.customerController.addNewCustomer);
 
         app.route('/customer/:customerId')
         .get(this.customerController.getCustomerWithID)

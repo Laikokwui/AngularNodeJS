@@ -17,4 +17,5 @@ export const CustomerSchema = new Schema({
         type: Date,
         default: Date.now
     }
+    
 });
