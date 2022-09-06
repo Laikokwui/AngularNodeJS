@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Customer } from '../model/customer.model';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class CustomerService {
  
   // Get all objects
   getCustomers() {
-    return this.httpClient.get(`${this.REST_API}`);
+    return this.httpClient.get<Customer[]>(`${this.REST_API}`);
   }
  
   // Get single object

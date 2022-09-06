@@ -7,6 +7,7 @@ import { CustomerService } from 'src/app/service/customer.service';
   templateUrl: './customerlist.component.html',
   styleUrls: ['./customerlist.component.css']
 })
+
 export class CustomerlistComponent implements OnInit {
   customers?: Customer[];
   currentCustomer: Customer;
