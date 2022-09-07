@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from './../../service/customer.service';
+import { CustomerService } from '../../services/customer.service';
 import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   templateUrl: './customercreate.component.html',
   styleUrls: ['./customercreate.component.css']
 })
+
 export class CustomercreateComponent implements OnInit {
   customerForm: FormGroup;
 
