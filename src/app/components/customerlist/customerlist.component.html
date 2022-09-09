@@ -1,39 +1,30 @@
-<p>customerlist works!</p>
-
-<div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by name"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <h4>Customer List</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
+<div class="overflow-x-auto relative mx-5 my-16">
+  <h1 class="text-lg font-bold mb-3">Customers</h1>
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="py-3 px-6">Full Name</th>
+        <th scope="col" class="py-3 px-6">Phone</th>
+        <th scope="col" class="py-3 px-6">Address</th>
+        <th scope="col" class="py-3 px-6">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
         *ngFor="let customer of customers; let i = index"
         [class.active]="i == currentIndex"
         (click)="setActiveCustomer(customer, i)"
       >
-        {{ customer.fullName }}
-        <button class="m-3 btn btn-sm btn-danger" (click)="removeCustomer(customer._id)">
-          Remove
-        </button>
-      </li>
-    </ul>
-  </div>
+        <td class="py-4 px-6">{{ customer.fullName }}</td>
+        <td class="py-4 px-6">{{ customer.phone }}</td>
+        <td class="py-4 px-6">{{ customer.address }}</td>
+        <td class="py-4 px-6">
+          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded" (click)="removeCustomer(customer._id)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
