@@ -1,12 +1,21 @@
-<div class="overflow-x-auto relative mx-5 my-16">
-  <h1 class="text-lg font-bold mb-3">Customers</h1>
-  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<div class="overflow-x-auto relative mx-5 mt-14 mb-20">
+  <div class="grid grid-cols-6 gap-4 mb-5">
+    <h1 class="text-lg font-bold mb-3 col-start-1 col-end-3">Customers</h1>
+    <a 
+      routerLink="/customer/create"
+      class="col-end-8 col-span-2 text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+    >
+      Create
+    </a>
+  </div>
+  
+  <table class="border border-spacing-0 w-full text-sm text-left text-gray-500 dark:text-gray-400">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
-        <th scope="col" class="py-3 px-6">Full Name</th>
-        <th scope="col" class="py-3 px-6">Phone</th>
-        <th scope="col" class="py-3 px-6">Address</th>
-        <th scope="col" class="py-3 px-6">Action</th>
+        <th scope="col" class="py-3 px-6 border border-spacing-0">Full Name</th>
+        <th scope="col" class="py-3 px-6 border border-spacing-0">Phone</th>
+        <th scope="col" class="py-3 px-6 border border-spacing-0">Address</th>
+        <th scope="col" class="py-3 px-6 text-center border border-spacing-0">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -16,11 +25,23 @@
         [class.active]="i == currentIndex"
         (click)="setActiveCustomer(customer, i)"
       >
-        <td class="py-4 px-6">{{ customer.fullName }}</td>
-        <td class="py-4 px-6">{{ customer.phone }}</td>
-        <td class="py-4 px-6">{{ customer.address }}</td>
-        <td class="py-4 px-6">
-          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded" (click)="removeCustomer(customer._id)">
+        <td class="py-4 px-6 border border-spacing-0">{{ customer.fullName }}</td>
+        <td class="py-4 px-6 border border-spacing-0">{{ customer.phone }}</td>
+        <td class="py-4 px-6 border border-spacing-0">{{ customer.address }}</td>
+        <td class="py-4 px-6 grid gap-4 grid-cols-1 md:grid-cols-3 border border-spacing-0">
+          <a
+            routerLink="/customer/{{customer._id}}"
+            class="text-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded" 
+          >
+            View
+          </a>
+          <a
+            routerLink="/customer/update/{{customer._id}}"
+            class="text-center bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded" 
+          >
+            Update
+          </a>
+          <button class="text-center bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded" (click)="removeCustomer(customer._id)">
             Remove
           </button>
         </td>

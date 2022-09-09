@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'boat', component: BoatComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'customer', component: CustomerlistComponent },
-  { path: 'customer/:id', component: CustomerDetailsComponent },
   { path: 'customer/create', component: CustomercreateComponent },
+  { path: 'customer/:id', component: CustomerDetailsComponent },
   { path: 'customer/update/:id', component: CustomerupdateComponent },
   
 ];
