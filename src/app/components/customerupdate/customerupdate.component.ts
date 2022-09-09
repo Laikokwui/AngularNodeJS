@@ -24,9 +24,9 @@ export class CustomerupdateComponent implements OnInit {
 
     this.customerService.getCustomer(this.getId).subscribe(res => {
       this.updateForm.setValue({
-        name: res['name'],
-        price: res['price'],
-        description: res['description']
+        fullName: res['fullName'],
+        phone: res['phone'],
+        address: res['address']
       });
     });
 

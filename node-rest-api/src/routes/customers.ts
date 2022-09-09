@@ -15,10 +15,11 @@ export class Routes {
         app.route('/customer').get(this.customerController.getCustomers);
 
         app.route('/customer/create').post(this.customerController.addNewCustomer);
+        
+        app.route('/customer/update/:customerId').put(this.customerController.updateCustomer);
 
         app.route('/customer/:customerId')
         .get(this.customerController.getCustomerWithID)
-        .put(this.customerController.updateCustomer)
         .delete(this.customerController.deleteCustomer);
     }
     

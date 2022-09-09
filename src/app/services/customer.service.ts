@@ -45,7 +45,7 @@ export class CustomerService {
  
   // Update
   updateCustomer(id:any, data:any): Observable<any> {
-    let API_URL = `${this.REST_API}/customer/${id}`;
+    let API_URL = `${this.REST_API}/customer/update/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)

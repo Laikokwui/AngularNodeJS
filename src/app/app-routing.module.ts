@@ -7,14 +7,16 @@ import { ParentComponent } from './components/parent/parent.component';
 import { CustomerlistComponent } from './components/customerlist/customerlist.component';
 import { CustomercreateComponent } from './components/customercreate/customercreate.component';
 import { CustomerupdateComponent } from './components/customerupdate/customerupdate.component';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'boat', component: BoatComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'customer', component: CustomerlistComponent },
+  { path: 'customer/:id', component: CustomerDetailsComponent },
   { path: 'customer/create', component: CustomercreateComponent },
-  { path: 'customer/:id', component: CustomerupdateComponent },
+  { path: 'customer/update/:id', component: CustomerupdateComponent },
   
 ];
 
