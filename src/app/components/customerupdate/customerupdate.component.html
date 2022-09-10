@@ -1,24 +1,59 @@
-<div class="row justify-content-center mt-5">
-    <div class="col-md-4">
-        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" type="text" formControlName="fullName" required>
-          </div>
-  
-          <div class="form-group">
-            <label>Phone</label>
-            <input class="form-control" type="text" formControlName="phone" required>
-          </div>
-  
-          <div class="form-group">
-            <label>Address</label>
-            <input class="form-control" type="text" formControlName="address" required>
-          </div>
-  
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Update Customer</button>
-          </div>
-        </form>
-    </div>
+<div class="bg-gradient-to-r from-cyan-300 to-indigo-300 p-16">
+  <div class="w-full max-w-xl mx-auto my-16">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" ngNativeValidate [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2">
+          Name
+        </label>
+        <input 
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          id="fullName" 
+          type="text" 
+          formControlName="fullName"
+          placeholder="e.g John Doe"
+          required
+        >
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2">
+          Phone
+        </label>
+        <input 
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          id="phone" 
+          type="text" 
+          formControlName="phone"
+          placeholder="e.g 012837412" 
+          required
+        >
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2">
+          Address
+        </label>
+        <input 
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          id="address" 
+          type="text" 
+          formControlName="address" 
+          placeholder="e.g Road King"
+          required
+        >
+      </div>
+
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          Update Customer
+        </button>
+        <a
+          class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+          routerLink="/customer"
+        >
+          Back
+        </a>
+      </div>
+    </form>
+  </div>
 </div>
