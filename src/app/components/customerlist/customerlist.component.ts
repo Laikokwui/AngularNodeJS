@@ -6,7 +6,6 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-customerlist',
   templateUrl: './customerlist.component.html',
-  styleUrls: ['./customerlist.component.css']
 })
 
 export class CustomerlistComponent implements OnInit {
@@ -26,11 +25,9 @@ export class CustomerlistComponent implements OnInit {
 
     this.titleService.setTitle("Customer List Page - GettingStarted");
   
-    this.metaTagService.addTags([
-      { name: 'keywords', content: 'Angular GettingStarted, Customer List Page, Angular Customer' },
-      { name: 'author', content: 'Lai kok Wui' },
-      { charset: 'UTF-8' }
-    ], true);
+    this.metaTagService.updateTag({ 
+      name: 'keywords', content: 'Angular GettingStarted, Customer List Page, Angular Customer' 
+    });
   }
 
   retrieveCustomers(): void {

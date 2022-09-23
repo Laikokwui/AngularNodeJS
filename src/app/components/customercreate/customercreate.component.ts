@@ -7,7 +7,6 @@ import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-customercreate',
   templateUrl: './customercreate.component.html',
-  styleUrls: ['./customercreate.component.css']
 })
 
 export class CustomercreateComponent implements OnInit {
@@ -31,11 +30,9 @@ export class CustomercreateComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle("Create Customer - GettingStarted");
   
-    this.metaTagService.addTags([
-      { name: 'keywords', content: 'Angular GettingStarted, Create Customer, Angular Create Customer page' },
-      { name: 'author', content: 'Lai kok Wui' },
-      { charset: 'UTF-8' }
-    ], true);
+    this.metaTagService.updateTag({ 
+      name: 'keywords', content: 'Angular GettingStarted, Create Customer, Angular Create Customer page' 
+    });
   }
 
   onSubmit(): any {
