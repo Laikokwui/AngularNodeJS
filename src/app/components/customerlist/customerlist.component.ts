@@ -46,30 +46,12 @@ export class CustomerlistComponent implements OnInit {
     this.currentIndex = -1;
   }
 
-  setActiveCustomer(customer: Customer, index: number): void {
-    this.currentCustomer = customer;
-    this.currentIndex = index;
-  }
-
   removeCustomer(id): void {
     this.customerService.deleteCustomer(id)
       .subscribe({
         next: (res) => {
           console.log(res);
           this.refreshList();
-        },
-        error: (e) => console.error(e)
-      });
-  }
-
-  searchName(): void {
-    this.currentCustomer = {};
-    this.currentIndex = -1;
-    this.customerService.getCustomers()
-      .subscribe({
-        next: (data) => {
-          this.customers = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
