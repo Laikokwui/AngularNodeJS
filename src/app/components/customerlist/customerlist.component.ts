@@ -35,7 +35,6 @@ export class CustomerlistComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.customers = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
